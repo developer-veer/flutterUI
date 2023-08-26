@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:my_practice_work/Card.dart';
 
 void main() => runApp(CardApp());
 
@@ -13,7 +14,7 @@ class CardApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: HomePage(),
     );
   }
 }
