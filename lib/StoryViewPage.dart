@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:my_practice_work/StatusPage.dart';
 import 'package:story_view/controller/story_controller.dart';
 import 'package:story_view/widgets/story_view.dart';
 
@@ -16,9 +15,15 @@ class _StoryView_State extends State<StoryView_> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: StoryView(storyItems: [
-        StoryItem.text(title: 'This Tanveer Story', backgroundColor: Colors.yellow)
-      ], controller: contrl ,
+      child: StoryView(
+        onComplete: () => Navigator.pop(context),
+        storyItems: [
+          StoryItem.text(
+              title: 'This Tanveer Story', backgroundColor: Colors.yellow),
+          StoryItem.text(
+              title: 'This Veer Story', backgroundColor: Colors.green)
+        ],
+        controller: contrl,
         inline: false,
         repeat: false,
       ),

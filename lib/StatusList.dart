@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:my_practice_work/StoryViewPage.dart';
 
 class StatusList extends StatelessWidget {
   StatusList({super.key});
@@ -13,17 +14,21 @@ class StatusList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
         itemCount: 4,
-        itemBuilder: (context, index) => (ListTile(
-              leading: CircleAvatar(
-                foregroundImage: AssetImage('Images/${Img[index]}'),
-              ),
-              title: Text(UserNames[index],
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold)),
-              subtitle: Text('${times[index]} min ago',
-                  style: TextStyle(color: Colors.white)),
-            )));
+        itemBuilder: (context, index) => GestureDetector(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => (StoryView_()))),
+              child: (ListTile(
+                leading: CircleAvatar(
+                  foregroundImage: AssetImage('Images/${Img[index]}'),
+                ),
+                title: Text(UserNames[index],
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold)),
+                subtitle: Text('${times[index]} min ago',
+                    style: TextStyle(color: Colors.white)),
+              )),
+            ));
   }
 }
